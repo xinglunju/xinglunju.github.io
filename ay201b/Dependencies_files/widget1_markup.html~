@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title></title></head><body><style type="text/css">
+table {width:530px;
+font-family: Arial;
+font-size: 14px;
+color:#fff;
+background-color:#000;
+border-spacing: 0px 0px;
+border:3px solid #fff;
+}
+th {width:180px;
+height:35px;
+color:#fff;
+background-color: #000;
+border:1px solid #fff;
+}
+td {color:#fff;
+width:350px;
+font-style:italic;
+text-align:center;
+background-color: #000;
+border:1px solid #fff;
+}
+</style>
+<table>
+<tr><th>Packages required</th><td>Comments</td></tr>
+<tr><th>numpy</th><td>also included in the enthought package</td></tr>
+<tr><th>scipy</th><td>also included in the enthought package</td></tr>
+<tr><th>enthought</th><td>includes Mayavi & TraitUI</td></tr>
+<tr><th>pyfits</th><td>also included in the astropy package</td></tr>
+</table></body></html>

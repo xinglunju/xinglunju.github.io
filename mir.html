@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Green Exposure  
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130308
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>MIR tricks</title>
+<!--link href="http://fonts.googleapis.com/css?family=Arvo|Open+Sans:400,300,600,700" rel="stylesheet" type="text/css" /-->
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="scripts/tracking.js"></script>
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="menu-wrapper">
+	<div id="menu">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="research.html">Research & Publications</a></li>
+			<li class="current_page_item"><a href="software.html#">Software & Code</a></li>
+			<li><a href="teaching.html">Teaching & Outreach</a></li>
+			<li><a href="links.html">Links</a></li>
+		</ul>
+	</div>
+	<!-- end #menu --> 
+</div>
+
+<!--div id="banner"><a href="#"><img src="images/sma_dawn.jpg" width="1200" height="600" alt="" /></a></div-->
+
+<div id="page">
+	<div class="post">
+		<p>Some MIR calibration tricks that might be useful. [Last update: Nov 28, 2014]</p>
+		<p>Acknowledgements: Qizhou Zhang, Chunhua Qi, Eric Keto, Nimesh Patel, Thushara Pillai.</p>
+		<p>Please let me know if you find something wrong or you have better solutions to these issues, thanks!</p>
+		<p>References: 
+			<ol>
+				<li><a href="https://www.cfa.harvard.edu/~cqi/mircook.html" target="_blank" class="class2">The MIR Cookbook</a></li>
+				<li><a href="https://www.cfa.harvard.edu/sma/mir" target="_blank" class="class2">Eric Keto's MIR Website</a></li>
+			</ol>
+		</p>
+		<h2>General Issues</h2>
+			<ul>
+				<li>Use ctrl-s to stop rolling the message, ctrl-q to resume, and ctrl-r to refresh.</li>
+				<li>Use frames='25' to plot more panels in one window.</li>
+				<li>Make images of the quasars: they are supposed to be point sources, so if anything is wrong, it is easy to tell.</li>
+				<li>If an antenna shows significant phase variation over time, it may have a wrong position recorded in the 'antennas' file, which may or may not lead to a small amplitude. Find the correct position, probably wthin data taken after a pointing track, and use 'sma_cal_bas' to apply the new baseline solution.</li>
+				<li>Before applying Tsys, plot Tsys vs. both elevation and time (plot_var, x='dhrs'). Sometimes Tsys does not correlate with elevation, due to weather issues, then it is important to check its status over time.</li>
+				<li>Check the amplitude of quasars: they should be unresolved so the amplitude of different baselines should be similar.</li>
+				<li>Do uti_avgband before apply_tsys.</li>
+				<li>If the project is a filler, the doppler tracking might be done with the other project on the same night. If the velocities of the targets are apparently wrong, try running uti_doppler_fix with the coordinates of the tracking source in the other project.
+			</ul>
+		<h2>Passband Calibration</h2>
+			<ul>
+				<li>Increase smoothing width to have a better S/N, if necessary.</li>
+				<li>If the calibrators have line features (e.g. BL Lac has <sup>12</sup>CO emission), use 'phase_conjugate' to calibrate this sideband with passband solutions from the other sideband.</li>
+				<li>MIR does a self-calibration for the passband calibrators with pass_cal, so any phase jump over time in them is fine.</li>
+				<li>Use antenna-based passband calibration to increase the S/N, if some chunks in some baselines show a very different phase/amplitude passband as compared to the others. The possible cause is that the dependence of passband on frequency/time changes.</li>
+				<li>It is ok to use all quasars, including gain calibrators, for passband calibration. Make sure them do not have line features (e.g. one of the frequently-used gain calibrators, 1744-312, has <sup>12</sup>CO line features).</li>
+				<li>If the two IFs show a flat phase, then there is no need to do passband calibration separately. However if e.g. the gain calibrators show phase jump between IFs and we do not exactly know the reason, then we have to do passband calibration and subsequent gain calibration for the two IFs separately. Select either IF and use uti_avgband to regenrerate the continuum band before gain calibration. Or there is another way: use uti_difif and gaincal with /difif to correct for this phase jump before passband calibration, see <a href="https://www.cfa.harvard.edu/~cqi/mir/mirtutorial2014.txt" target=_blanck" class="class2">Charlie Qi's note</a>.</li>
+				<li>Using too many passband calibrators, therefore the averaged passband solutions, might lead to uneven phase between the two IFs. If so, try using only one passband calibrator.</li>
+				<li>Sometimes there is a 'Bad Sample Statistics (corrPlotter red boxes)' error recorded in the observing log, then the chunk(s) mentioned might actually not receive any signal, and show a very small amplitude during pass_cal. Need to flag such chunks later.</li>
+			</ul>
+		<h2>Flux Calibration</h2>
+			<ul>
+				<li>Use data filter to select data of flux calibrators and gain calibrators in the same elevation range, so that the flux measurement is more accurate.</li>
+				<li>If the calibrators have line features (e.g. Mars has <sup>12</sup>CO absorption), then avoid these channels and make a new continuum band ('c1') before flux calibration.</li>
+				<li>Ideally the flux of calibrators should be stable over time and between the two sidebands. If they show different amplitude over time and for the two sidebands (use plot_var,x='prbl',y='aveamp' to check it) in certain baselines, then flag these baselines first.</li>
+				<li>For amplitude solutions, MIR does extrapolation. If the result is too wrong, then we can skip flux calibration and use empirical values.</li>
+			</ul>
+		<h2>Gain Calibration</h2>
+			<ul>
+				<li>Check the phase and amplitude vs. time of gain calibrators: if they show a significant phase jump at some time, flag all data between the two adjacent gain calibration scans. These jumps should be reflected in the observing log: it could be an antenna losing phase lock ('Gunn PLL pops out of lock'), or an antenna being rebooted ('spontaneous antenna reboot'), or the observing script being restarted, or any other events recorded in the log.</li>
+			</ul>
+	</div>
+</div>
+<!-- end #page --> 
+
+<div id="footer">
+	<p>&copy; 2015 Xing Lu. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+<!-- end #footer -->
+
+<a href="#" class="back-to-top" style="display:none;float:right;">Back to Top</a>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="scripts/backtotop.js"></script>
+
+</div>
+<!-- end #wrapper -->
+
+</body>
+</html>
