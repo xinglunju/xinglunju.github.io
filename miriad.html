@@ -50,7 +50,8 @@ Released   : 20130308
 		</p>
 		<h2>General Issues</h2>
 			<ul>
-				<li>The invert task will not use data of one antenna if part of its spectrum has been flagged or missing, unless you specify the 'slop' keyword!</li>
+				<li>The invert task will not use data of one antenna if part of its spectrum has been flagged or missing, unless you specify the 'slop' keyword! (e.g. 'slop=1,zero' will replace all bad channels with 0.)</li>
+				<li>If a keyword is too long, for example the input of invert when mosaicing a very large area with hundreds of pointings, one can list all the input parameters in a file and use 'keyword=@filename'.</li>
 			</ul>
 	</div>
 </div>
