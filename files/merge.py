@@ -1,65 +1,85 @@
-## Adapt from Jens Kauffmann's script
-## at https://sites.google.com/site/jenskauffmann/research-notes/adding-zero-spa
-
-## Merge CSO and SMA line data ##
+## Merge CSO and SMA SO data ##
 
 ## 1. Preparation of CSO data in miriad ##
 miriad> 
-fits in=target_line1_ffts1w.fits out=target_line1_ffts1w.cm op=xyin
-regrid in=target_line1_ffts1w.cm out=target_line1_ffts1w.cm.regrid axes=1,2 project=sin options=noscale
-puthd in=target_line1_ffts1w.cm.regrid/radesys value='FK5' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/bunit value='K' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/specsys value='LSRK' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/velref value=257 type=integer
-puthd in=target_line1_ffts1w.cm.regrid/telescop value='CSO' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/observer value='xlu' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/cunit1 value='deg' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/cunit2 value='deg' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/cunit3 value='m/s' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/ctype4 value='STOKES' type=ascii
-puthd in=target_line1_ffts1w.cm.regrid/cunit4 value='1' type=ascii
+fits in=c20kms_hnco.fits out=c20kms_hnco.cm op=xyin
+regrid in=c20kms_hnco.cm out=c20kms_hnco.cm.regrid axes=1,2 project=sin options=noscale
+puthd in=c20kms_hnco.cm.regrid/radesys value='FK5' type=ascii
+puthd in=c20kms_hnco.cm.regrid/bunit value='K' type=ascii
+puthd in=c20kms_hnco.cm.regrid/specsys value='LSRK' type=ascii
+puthd in=c20kms_hnco.cm.regrid/velref value=257 type=integer
+puthd in=c20kms_hnco.cm.regrid/telescop value='CSO' type=ascii
+puthd in=c20kms_hnco.cm.regrid/observer value='xlu' type=ascii
+puthd in=c20kms_hnco.cm.regrid/ctype4 value='STOKES' type=ascii
+puthd in=c20kms_hnco.cm.regrid/cunit4 value='I' type=ascii
 # Any other keywords?
 
-fits in=target_line1_ffts1w.cm.regrid out=new.line1.fits op=xyout
+fits in=c20kms_hnco.cm.regrid out=new.hnco.fits op=xyout
 
 ## 2. Import CSO fits image ##
+CASA>
+smaimage = '../../2012B-S097_2013A-S049/images/c20kms/MERGE/HNCO/c20kms.hnco.image'
+smapb = '../../2012B-S097_2013A-S049/images/c20kms/MERGE/HNCO/c20kms.hnco.flux'
 
-importfits(fitsimage="cso.line1.fits",imagename="cso.line1.image")
+importfits(fitsimage="new.hnco.fits",imagename="cso.hnco.image")
 
 # Swap stokes and velocity axes
-imtrans(imagename="cso.line1.image",outfile="cso.line1.image.trans",order='0132')
+imtrans(imagename="cso.hnco.image",outfile="cso.hnco.image.trans",order='0132')
 
 # Smooth the velocity axis
-ia.open('cso.line1.image.trans')
-im2 = ia.sepconvolve(outfile='cso.line1.smooth.image',axes=[0,1,3],types=['box','box','box'],widths=['15arcsec','15arcsec','0.8125MHz'])
+ia.open('cso.hnco.image.trans')
+im2 = ia.sepconvolve(outfile='cso.hnco.smooth.image',axes=[0,1,3],types=['gauss','gauss','gauss'],widths=['15arcsec','15arcsec','0.81MHz'])
 im2.done()
 ia.close()
 
 # Regrid the velocity axis
-imregrid(imagename='cso.line1.smooth.image',template='sma.line1.image',output='cso.line1.regrid.image',asvelocity=True,axes=[3],interpolation='cubic')
+imregrid(imagename='cso.hnco.smooth.image',template=smaimage,output='cso.hnco.regrid.image',asvelocity=True,axes=[0,1,3],interpolation='linear')
 
 # From K to Jy/beam
-# Diameter of CSO is 10.4 m, resolution is 34.51 arcsec.
-JyperK = 0.817 * (217.105/100.)**2. * (34.51/10.)**2.
-im1 = ia.imagecalc(outfile='cso.line1.regrid.intensity.image',pixels=str(JyperK)+'*cso.line1.regrid.image')
+frest =	219.79827
+sdbeam = 34.0866
+JyperK = 0.817 * (frest/100.)**2. * (sdbeam/10.)**2.
+im1 = ia.imagecalc(outfile='cso.hnco.regrid.intensity.image',pixels=str(JyperK)+'*cso.hnco.regrid.image')
 im1.done()
 ia.close()
-
-imhead('cso.line1.regrid.intensity.image',mode='put',hdkey='bunit',hdvalue='Jy/beam')
+imhead('cso.hnco.regrid.intensity.image',mode='put',hdkey='bunit',hdvalue='Jy/beam')
 
 ## 3. Feather CSO and SMA data ##
 
-# PB correction of SMA data
-impbcor(imagename='sma.line1.image',outfile='sma.line1.pbcor.image',pbimage='sma.line1.flux',mode='divide')
+# PB convolution of CSO data
+impbcor(imagename='cso.hnco.regrid.intensity.image',outfile='cso.hnco.regrid.intensity.pb.image',pbimage=smapb,mode='multiply')
 
-# Check the data with casafeather: effdishdiam is 10m, sdfactor is 1.2?
-feather(lowres='cso.line1.regrid.intensity.image',highres='sma.line1.pbcor.image',imagename='feathered.line1.image',effdishdiam=10,lowpassfiltersd=True,sdfactor=1.2)
+# Check the data with casafeather: effdishdiam is 10m, sdfactor is 1
+feather(lowres='cso.hnco.regrid.intensity.pb.image',highres=smaimage,imagename='feathered.hnco.image',effdishdiam=10,lowpassfiltersd=True,sdfactor=1.0)
 
-impbcor(imagename='feathered.line1.image',pbimage='sma.line1.flux',outfile='feathered.line1.uniform.image',mode='multiply')
+impbcor(imagename='feathered.hnco.image',pbimage=smapb,outfile='feathered.hnco.pbcor.image',mode='divide')
 
-## 4. Final check ##
+exportfits(imagename='feathered.hnco.image',fitsimage='feathered.hnco.image.fits',dropstokes=T,velocity=T)
+exportfits(imagename='feathered.hnco.pbcor.image',fitsimage='feathered.hnco.pbcor.image.fits',dropstokes=T,velocity=T)
 
-imsmooth(imagename='feathered.line1.image',outfile='feathered.line1.smooth.image',kernel='gauss',major='34.51arcsec',minor='34.51arcsec',pa='0deg',targetres=True)
+## 4. Final check
 
-# Compare the above image to cso.line1.regrid.intensity.image, are their fluxes consistent?
+#imsmooth(imagename='feathered.hnco.pbcor.image',outfile='feathered.hnco.pbcor.image.smooth',kernel='gauss',major='34.51arcsec',minor='34.51arcsec',pa='0deg',targetres=True)
+
+# Compare the above image with cso.hnco.regrid.intensity.imagev2?
+
+## 5. Make moment maps
+
+# Select channels between -20~40 km/s, rms=0.12 Jy/beam
+rm -rf feathered.hnco.image.integrated*
+rm -rf feathered.hnco.image.weighted_coord*
+rm -rf feathered.hnco.image.weighted_dispersion_coord*
+
+imsmooth(imagename='feathered.hnco.image',outfile='feathered.hnco.image.smooth',kernel='gauss',major='5.2arcsec',minor='3arcsec',pa='-176.035deg',targetres=T,overwrite=T)
+ia.open('feathered.hnco.image.smooth')
+im2 = ia.hanning(outfile='feathered.hnco.image.smooth.hann',drop=F)
+im2.done()
+ia.close()
+
+# Smoothed image: rms~0.08 mJy/beam
+immoments(imagename='feathered.hnco.image',moments=[0,1,2],chans='27~82',includepix=[0,9999.],mask='feathered.hnco.image.smooth.hann>0.4')
+
+exportfits(imagename='feathered.hnco.image.integrated',fitsimage='feathered.hnco.image.integrated.fits',dropstokes=T)
+exportfits(imagename='feathered.hnco.image.weighted_coord',fitsimage='feathered.hnco.image.weighted_coord.fits',dropstokes=T)
+exportfits(imagename='feathered.hnco.image.weighted_dispersion_coord',fitsimage='feathered.hnco.image.weighted_dispersion_coord.fits',dropstokes=T)
 
