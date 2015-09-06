@@ -39,9 +39,21 @@ h3 {
 	font-size: 1.0em;
 }
 
+sup {
+	vertical-align: top;
+	position: relative;
+	top: -0.1em;
+}
+
+sub {
+	vertical-align: bottom;
+	position: relative;
+	top: 0.3em;
+}
+
 p, ul, ol {
 	margin-top: 0;
-	line-height: 120%;
+	line-height: 140%;
 }
 
 ul, ol {
@@ -265,11 +277,15 @@ a:hover {
 }
 
 .post a.class1 {
-	color: rgb(87,150,250);;
+	color: rgb(76,153,0);
 }
 
 .post a.class2 {
-	color: rgb(76,153,0);;
+	color: rgb(87,150,250);
+}
+
+.post p {
+	font-size: 1.0em;
 }
 
 .post .meta {

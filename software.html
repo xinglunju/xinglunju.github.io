@@ -42,27 +42,28 @@ Released   : 20130308
 <div id="page">
 	<div class="post">
 		<h1>Software</h1>
-			<p>Some MIR tricks I learned from my collegues: <a href="mir.html">MIR tricks</a>.</p>
-			<p>Some Miriad tricks: <a href="miriad.html">Miriad tricks</a>.</p>
-			<p>A simple script to merge single-dish and interferometer data, using the feather task in CASA, adapted from Jens Kauffmann's script: <a href="files/merge.py">merge.py</a>.</p>
+			<p>Some MIR tricks I learned from my collegues: <a href="mir.html" class="class1">MIR tricks</a>.</p>
+			<p>Some Miriad tricks: <a href="miriad.html" class="class1">Miriad tricks</a>.</p>
+			<p>A simple script to merge single-dish and interferometer data, using the feather task in CASA, adapted from <a href="https://sites.google.com/site/jenskauffmann/research-notes/adding-zero-spa" target="_blank" class="class2">Jens Kauffmann's script</a>: <a href="files/merge.py" class="class1">merge.py</a>.</p>
 		<hr>
 		</br>
 		<h1>Code</h1>
-			<p>Here are some IDL and Python codes I wrote: <a href="#TDViz">TDViz</a>, <a href="#PyAMOR">PyAMOR</a>, <a href="#EMANON">Emanon</a>.</p>
+			<p>Here are some IDL and Python codes I wrote: <a href="#TDViz" class="class1">TDViz</a>, <a href="#PyAMOR" class="class1">PyAMOR</a>, <a href="#EMANON" class="class1">Emanon</a>.</p>
 			</br>
 			<h2><a name="TDViz">TDViz: Three-dimensional Datacube Visualizer</a></h2>
 				<p><a href="https://github.com/xinglunju/tdviz" target="_blank" class="class2">GitHub link</a></p>
-				<p>This code is originally a module prepared for <a href="http://ay201b.wordpress.com/topical-modules/2013-topical-modules/" target="_blank" class="class2">the AY201b course</a> tutored by Prof. Alyssa Goodman at Harvard Astronomy Department (see <a href="ay201b/index.html" target="_blank">the module website</a>). It can be run with 'python TDViz.py', as long as you have <a href="#dep">all the required python packages</a> installed. A snapshot of the interface is shown below.</p>
+				<p>This code is originally a module prepared for <a href="http://ay201b.wordpress.com/topical-modules/2013-topical-modules/" target="_blank" class="class2">the AY201b course</a> tutored by Prof. Alyssa Goodman at Harvard Astronomy Department (see <a href="ay201b/index.html" target="_blank" class="class1">the module website</a>). It can be run with 'python TDViz.py', as long as you have <a href="#dep" class="class1">all the required python packages</a> installed. A snapshot of the interface is shown below.</p>
 				<img src="images/sc1.jpg" style="float:center;"/>
-				<p>You can select your own FITS files. After you select one, the starting and ending pixels in three axes, and the maximum and minimum values will be updated respectively. The default scene will be the entire datacube. If you want to focus on a smaller region and/or a narrower velocity range, you can change corresponding values and click the 'Plot' button again. You can also do something like <a href="#sketchfab">exporting a 3D scene</a> or making a GIF movie.</p>
+				<p>You can select your own FITS files. After you select one, the starting and ending pixels in three axes, and the maximum and minimum values will be updated respectively. The default scene will be the entire datacube. If you want to focus on a smaller region and/or a narrower velocity range, you can change corresponding values and click the 'Plot' button again. You can also do something like <a href="#sketchfab" class="class1">exporting a 3D scene</a> or making a GIF movie.</p>
 				<img src="images/sc2.jpg" style="float:center;"/>
-				<p><a name="sketchfab">Here</a> is an example of its outcome: a visualizatin of the CO outflows in L1551 IRS5, using published data in <a href="http://adsabs.harvard.edu/abs/2009ApJ...698..184W" target="_blanck" class="class2">Wu et al. 2009</a>.</p>
-				<iframe width="640" height="480" src="https://sketchfab.com/models/359ef5519d9244989df6c6408a80a257/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+				<p><a name="sketchfab" class="class1">Here</a> is an example of its outcome: a visualizatin of the CO outflows in G28.53-0.25, using published data in my recent paper <a href="http://adsabs.harvard.edu/abs/2015ApJ...805..171L" target="_blanck" class="class2">Lu et al. 2015</a>.</p>
+				<iframe width="640" height="480" src="https://sketchfab.com/models/f4b9bb722d3145978edf2c369d2175df/embed" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
 				<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-				    <a href="https://sketchfab.com/models/359ef5519d9244989df6c6408a80a257?utm_source=oembed&utm_medium=embed&utm_campaign=359ef5519d9244989df6c6408a80a257" target="_blank" style="font-weight: bold; color: #1CAAD9;">L1551 IRS5 outflows</a>
-					    by <a href="https://sketchfab.com/xinglu?utm_source=oembed&utm_medium=embed&utm_campaign=359ef5519d9244989df6c6408a80a257" target="_blank" style="font-weight: bold; color: #1CAAD9;">xinglu</a>
-						    on <a href="https://sketchfab.com?utm_source=oembed&utm_medium=embed&utm_campaign=359ef5519d9244989df6c6408a80a257" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-				</p>
+				    <a href="https://sketchfab.com/models/f4b9bb722d3145978edf2c369d2175df?utm_source=oembed&utm_medium=embed&utm_campaign=f4b9bb722d3145978edf2c369d2175df" target="_blank" style="font-weight: bold; color: #1CAAD9;">CO outflows in G28.53</a>
+					    by <a href="https://sketchfab.com/xinglu?utm_source=oembed&utm_medium=embed&utm_campaign=f4b9bb722d3145978edf2c369d2175df" target="_blank" style="font-weight: bold; color: #1CAAD9;">xinglu</a>
+						    on <a href="https://sketchfab.com?utm_source=oembed&utm_medium=embed&utm_campaign=f4b9bb722d3145978edf2c369d2175df" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+							</p>
 				<p>It is certain that many known and unknown bugs exist. If you find one, please do not hesitate to <a title="mailto:xinglv.nju@gmail.com?subject=bugs!!!!" href="mailto:xinglv.nju@gmail.com?subject=bugs!!!!">contact me</a>, thanks!</p>
 				<h4><a name="dep">Dependencies</a></h4>
 					<p>This code makes use of python modules including MayaVI, TraitsUI, astropy, numpy, and scipy. Normally you can install <a href="http://python4astronomers.github.io/installation/recommended_options.html" target="_blank" class="class2">one of the popular scientific Python packages</a> and have them all. I use <a href="https://www.enthought.com/products/canopy/academic/" target="_blank" class="class2">the Canopy package</a> for running and testing. Another choice is <a href="https://store.continuum.io/cshop/anaconda/" target="_blank" class="class2">the Anaconda package</a>. Both packages are free (or have a free version for academic users).</p>
@@ -71,15 +72,15 @@ Released   : 20130308
 			<h2><a name="PyAMOR">PyAMOR: Python script for AMmOnia data Reduction</a></h2>
 				<p><a href="https://github.com/xinglunju/pyAmor" target="_blank" class="class2">GitHub link</a></p>
 				<p>This code is dedicated to modeling spectra of low level ammonia transitions (between (J,K)=(1,1) and (5,5)) and deriving parameters such as intrinsic linewidth, optical depth, and rotation temperature. The curve fitting is implemented by <a href="http://lmfit.github.io/lmfit-py" target="_blank" class="class2">the lmfit package</a>. It will have the capability of modeling spectra with more than one and up to three velocity components along the line of sight and providing one set of best fitted parameters for each component. For now it can only fit one velocity component across the entire map, and if there are more than one, it will take the highest peak at each pixel to do the fitting. And for now it can only fit two-velocity-components spectra manually, which means you need to visually identify the two velocities and when the S/N is small the fitting may not converge.</p>
-				<p><s>I also have an IDL version upon request.</s></p>
-				<img src="images/no_idling.jpg" style="float:center;width:300px;"/>
 				<p>What it can do now: For low S/N or low spectral resolution data, use cross-correlation between a model and a regridded spectrum (e.g. 10 times smaller channel width) to find the velocity, then fix it and run the minimization process. For high S/N data, it is ok to let the velocity be a free parameter.</p>
 				<p>What it will be able to do: 1. Include all five hyperfine components of NH<sub>3</sub> (1,1), or even better, all 18 hyperfine lines so that we know the intrinsic linewidth immediately; 2. Include higher transitions like NH<sub>3</sub> (4,4), (5,5). 3. Be able to fit multi-velocities. 4. Have an interactive graphic interface.</p>
+				<img src="images/pyamor.png" style="float:center;width:600px;"/>
 			</br>
 			<h2><a name="EMANON">EMANON: Estimate of Methyl cyanide parameters with NON-linear optimization</a></h2>
 				<p><a href="https://github.com/xinglunju/emanon" target="_blank" class="class2">GitHub link</a></p>
 				<p>It is translated from Roberto Galvan-Madrid's Mathematica code. 'Emanon' is actually 'No name' spelled backwards. I don't know the origin of this word but I learned it in Shinji Kajio's novel <i>Memories of Emanon</i>... </a>
 				<p>A script to fit CH<sub>3</sub>CN hyperfine lines and derive linewidth, temperature, and column density.</p>
+				<img src="images/emanon.png" style="float:center;width:600px;"/>
 			</br>
 			<h2>A Dancing Dophin</h2>
 				<p>You can find it <a href="http://python4astronomers.github.io/contest/bounce.html" target="_blank" class="class2">here</a>. Just for fun...</p>
