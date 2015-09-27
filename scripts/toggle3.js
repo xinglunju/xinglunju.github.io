@@ -1,14 +1,14 @@
 $(document).ready(function(){
 	var slideHeight = 120; // px
-	var defHeight = $('.wrap3').height();
-	if(defHeight >= slideHeight){
+	var defHeight3 = $('.wrap3').height();
+	if(defHeight3 >= slideHeight){
 		$('.wrap3').css('height', slideHeight + 'px');
 		$('.read-more3').append('<a href="#" class="class1">Click for more</a>');
 		$('.read-more3 a').click(function(){
-			var curHeight = $('.wrap3').height();
-			if(curHeight == slideHeight){
+			var curHeight3 = $('.wrap3').height();
+			if(curHeight3 == slideHeight){
 				$('.wrap3').animate({
-					height: defHeight
+					height: defHeight3
 				}, "normal");
 			$('.read-more3 a').html('Click to hide');
 			$('.gradient').fadeOut();
