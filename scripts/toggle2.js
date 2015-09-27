@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	var slideHeight = 105; // px
 	var defHeight = $('.wrap2').height();
-	console.log('defheight=',defHeight);
 	if(defHeight >= slideHeight){
 		$('.wrap2').css('height', slideHeight + 'px');
 		$('.read-more2').append('<a href="#" class="class1">Click for more</a>');
