@@ -11,13 +11,13 @@ $(document).ready(function(){
 					height: defHeight3
 				}, "normal");
 			$('.read-more3 a').html('Click to hide');
-			$('.gradient').fadeOut();
+			$('.gradient3').fadeOut();
 			}else{
 				$('.wrap3').animate({
 					height: slideHeight
 				}, "normal");
 				$('.read-more3 a').html('Click for more');
-				$('.gradient').fadeIn();
+				$('.gradient3').fadeIn();
 			}
 		return false;
 		});  
