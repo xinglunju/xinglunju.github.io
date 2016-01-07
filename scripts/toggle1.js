@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var slideHeight = 140; // px
+	var slideHeight = 270; // px
 	var defHeight1 = $('.wrap1').height();
 	/*var defHeight1 = 565;*/
 	if(defHeight1 >= slideHeight){
