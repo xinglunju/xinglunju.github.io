@@ -23,6 +23,16 @@ Released   : 20130308
 <script src="scripts/backtotop.js"></script>
 <script src="scripts/tracking.js"></script>
 <script language="javascript">
+function thermalv() {
+	mweight = thermalv.mweight.value;
+	t = thermalv.t.value;
+	var mass = new Number(69.8*Math.pow(sigmav,2)*(r/0.1));
+	var sigmav = new Number(Math.sqrt(2*t/mweight*8.2544e7));
+	var sigmav = sigmav.toFixed(2);
+	thermalv.sigmav.value = sigmav;
+}
+</script>
+<script language="javascript">
 function mvir() {
 	sigmav = virial.sigmav.value;
 	r = virial.r.value;
@@ -55,6 +65,12 @@ function mvir() {
 	<div class="post">
 		<p>Test Javascript function:</p>
 		<table>
+		<form name="thermalv">
+		<tr><td>Temperature:</td><td><input type="text" name="t" size=4" style="text-align:right;"> K.</td></tr>
+		<tr><td>Molecular Weight:</td><td><input type="text" name="mweight" size=4 style="text-align:right;"> amu.</td></tr>
+		<tr><td><input type="button" value="Calculate" onClick="thermalv()"></td></tr>
+		<tr><td>The thermal velocity dispersion is</td><td><input type="text" name="sigmav" size=4 style="text-align:right;"> km/s.</td></tr>
+		</form>
 		<form name="virial">
 		<tr><td>Velocity dispersion:</td><td><input type="text" name="sigmav" size=4" style="text-align:right;"> km/s.</td></tr>
 		<tr><td>Radius:</td><td><input type="text" name="r" size=4 style="text-align:right;"> pc.</td></tr>
