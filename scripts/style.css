@@ -1,0 +1,1300 @@
+/*
+Landing page template
+----
+Paul Matson
+Design studio
+IOP Publishing
+
+1. Reset
+2. Microclearfix
+3. Typography
+4. Layout
+5. Specific css
+6. Atomic
+7. Print
+
+
+Colour
+----
+AAS blue: #253788;
+Secondary light blue: #839ac6;
+
+overview text: #5d6888;
+
+The Astronomical Journal: #00749f;
+The Astrophysical Journal: #3b5692;
+The Astrophysical Journal Letters: #86a7d8;
+The Astrophysical Journal Supplement Series: #939bb3;
+
+galaxies: #624e42;
+high-energy: #9c1857;
+stars: #00a1a2;
+planetary: #1d70b7;
+intersteller: #4b67a7;
+sun: #ef7c00;
+instrumentation: #70196f;
+
+
+Gridset
+----
+Macro-layout handled by the Gridset CSS.
+Specify micro-layout changes using media queries in this stylesheet
+landing-page-default:
+desktop: min-width: 990px
+tablet: 641px - 989px;
+mobile: max-width: 640px
+
+
+*/
+
+
+/* 1. Reset ------ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+  text-decoration: none;
+}
+
+/* change border colour */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
+
+select {
+  -webkit-appearance: none;
+}
+
+sup, sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 1;
+  vertical-align: baseline;
+  _vertical-align: bottom;
+  position: relative;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: .5ex;
+}
+
+
+
+/* 2. Microclearfix ------ */
+
+.cf:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+
+/* 3. Typography ------ */
+
+body {
+  font-family: 'PT Sans', helvetica, arial, sans-serif;
+}
+
+
+/* Body sets default font */
+/* All rem sizes are in units of 10px due to html font-size: 62.5% setting */
+body {
+  color: #333;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  overflow-x: hidden; 
+}
+
+/* Heading margins */
+h2, h3, h4, h5, h6 {
+  margin: 0 0 .5em 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none; }
+
+h1 {
+  font-size: 42px;
+  font-size: 4.2rem;
+  line-height: 1.125;
+  margin-bottom: .5em;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+h1 {
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+}
+
+
+h2 {
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 1.25;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.25;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.25;
+  color: #333;
+  margin-top: 1.5em;
+}
+
+h5 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.25;
+  margin-top: 1.5em;
+}
+
+h6 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.25;
+  font-weight: 400;
+  margin-top: 1.5em;
+}
+
+.caps {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #666;
+
+}
+
+/* removes margin-top from headings inside boxout */
+.boxout > h2:first-child,
+.boxout > h3:first-child,
+.boxout > h4:first-child,
+.boxout > h5:first-child,
+.boxout > h6:first-child {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: #253788;
+  text-decoration: underline;
+}
+
+a:hover,
+a:active {
+  color: #839ac6;
+}
+
+
+b, strong, dt {
+  font-weight: 700;
+}
+
+i, em {
+  font-style: italic;
+}
+
+small, .small {
+  font-size: 87.5%; 
+  line-height: 1.4;
+}
+
+/* back to top */
+
+.btt {
+  font-size: 18px;
+  font-size: 1.8rem;
+  text-align: left;
+}
+
+.btt a {
+  text-decoration: none;
+}
+
+/* 'row' class replaces section */
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 4em;
+  /* max-width: 62.5rem; */ }
+
+.row:before, .row:after {
+    content: " ";
+    display: table; }
+
+.row:after {
+    clear: both; }
+
+ .row.collapse .row {
+    margin-left: 0;
+    margin-right: 0; }
+
+
+/* list styles */ 
+ul, ol { 
+  margin-bottom: 1em;
+  margin-left: 4em;
+} 
+
+@media only screen and (max-width: 640px) { 
+ul, ol { 
+  margin-left: 1em;
+} 
+}
+
+
+ol li {
+    list-style-type: decimal;
+} 
+
+ul li {
+    list-style-type: disc;
+} 
+
+/* text-wrap */
+
+.text-wrap-right {
+    padding-right: 2em;
+}
+
+.text-wrap-left {
+    padding-right: 2em;
+}
+
+@media only screen and (max-width: 640px) {	
+
+	.text-wrap-right {
+    	padding-right: 0;
+	}
+
+	.text-wrap-left {
+    padding-right: 0;
+	}
+}
+
+/* buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0 1em;
+  min-height: 3.4rem;
+  font-size: 18px; 
+  font-size: 1.8rem;
+  line-height: 1.25;
+  font-weight: normal;
+  text-align: center;
+  /* white-space: nowrap; */
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 989px) {
+  .btn {
+  font-size: 16px; 
+  font-size: 1.6rem;
+  }
+}
+
+
+
+.btn-large {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  min-height: 4.4rem;
+}
+
+.btn-w-100 {
+  width: 100%;
+}
+
+a.btn {
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    text-decoration: none;
+}
+
+
+a.btn-large {
+  padding-top: 0.9rem;
+}
+
+/* Button default */
+a.btn-default,
+a.btn-default:visited {
+  color: #fff;
+  background-color: #253788;
+  border-color: #253788;
+}
+
+a.btn-default:hover,
+a.btn-default:focus,
+a.btn-default:active {
+  color: #fff;
+  background-color: #839ac6;
+  border-color: #839ac6;
+}
+
+a.btn-default [class^="icon-"],
+a.btn-default [class*=" icon-"] {
+  color: #fff;
+}
+
+
+/* Tables */
+ table {
+    display: table;
+    table-layout: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1em 0 3em;
+    width: 100%;
+}
+
+th, td {
+    font-size: 16px;
+    font-size: 1.6rem;
+    padding: 0.75em 0.5em 0.75em 0;
+    vertical-align: top;
+}
+
+@media (max-width: 641px) {
+ th,  td {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.25;
+}
+}
+
+td {
+    border-bottom: 1px solid #ccc;
+}
+
+th  {
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+
+
+/* 4. Layout ------ */
+
+/* Macro-layout mostly handled by gridset */
+
+.wrapper {
+margin: 0 auto;
+max-width: 1078px; 
+width: 90%;
+}
+
+/* header */
+
+header {
+	background-color: #253788;
+  color: #FFF;
+  margin-bottom: 2.5em;
+}
+
+header p {
+  color: #FFF;
+  line-height: 1.5;
+}
+
+header img {
+	max-width: 100%; 
+  width: 100%; 
+}
+
+.aas-logo {
+  background-color: #000;
+  width: 80px;
+  border-bottom: 3px solid #FFF;
+  padding-top: 1.5em;
+  margin-bottom: 1.5em;
+  float:left;
+  text-align: center;
+}
+
+.aas-logo img {
+  width: 60px;
+}
+
+.aas-title {
+  background-repeat: no-repeat; 
+  float:left;
+  margin-top: 2.5em;
+  margin-left: .75em;
+  display: block;    
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space:nowrap;
+}
+
+@media only screen and (min-width: 601px) {
+    .aas-title {
+        background-image:url('../img/AAS-title.svg');
+        width:440px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .aas-title {
+        background-image:url('../img/AAS-title-3deck.svg');
+        background-repeat: no-repeat; 
+        width:142px;
+        height:60px;
+        margin-top: 1.6em;
+    }
+}
+
+
+/* footer */
+
+footer {
+  font-size: 14px;
+  font-size: 1.4rem;
+  padding: 2em 0;
+}
+
+
+/* boxes */
+.boxout {
+  overflow: auto;
+  padding: 1.5em 2em;
+  margin-bottom: 2em;
+  background-color: #e4e9f2;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+    .boxout {
+      padding: 1.5em 1em;
+    }
+}
+
+.bg-white {
+ background-color: #fff;
+}
+
+.boxout ul {
+  margin-left: 1em;
+}
+
+.boxout ul li  {
+  padding-left: 0;
+  text-indent: 0;
+  margin-bottom: .5em;
+}
+.boxout ul li:before {
+  content: none;
+}
+
+.boxed-header {
+  color: #FFF;
+  overflow: auto;
+  padding: .25em 3% .25em;
+  margin-bottom: 0em;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bkg-tint {
+ background-color: #e4e9f2; 
+ padding-top: 2em;
+}
+
+
+/* Figures */
+
+/* apply class to an image or to a div containing images */
+.w-100, .w-100 img {
+	width: auto;
+	max-width: 100%;
+}
+
+object {
+	pointer-events: none;
+} 
+
+
+/* 5. Specific CSS ------ */
+.overview {
+  color: #515c7a;
+}
+
+.corridor-nav {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-size: 1.3rem;
+  margin-top: 1.5em;
+  padding-bottom: 3.5em;
+}
+
+.corridor-nav ul {
+  margin-left: 0;
+}
+
+.corridor-nav li {
+    border-top: 1px solid #ccc;
+    letter-spacing: 1px;
+    margin-bottom: 1em;
+    overflow: hidden;
+    padding-top: 5px;
+    list-style-type: none;
+}
+
+.corridor-nav li a {
+    display: block;
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+
+.corridor-nav li a {
+    text-decoration: none;
+}
+
+.corridor-nav img {
+    display: table;
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+
+.corridor-icon {
+  width: 50px;
+  max-width: 50px;
+  margin-right: 10px;
+  float:left;
+  margin-bottom: 1.5em;
+}
+
+
+
+/* corridor page */
+
+.corridor-hdr {
+  border-top: 1px solid #ccc;
+  padding-top: .5em;
+  padding-bottom: 2.5em;
+}
+
+.corridor-icon-lrg {
+  width: 80px;
+  max-width: 80px;
+  margin-right: .75em;
+  vertical-align: top;
+  max-width: 20%;
+
+}
+
+.corridor-hdr h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
+  font-size: 3.2rem;
+  font-size: 32px;
+  display: inline-block;
+  vertical-align: middle;
+   max-width: 55%;
+}
+
+@media only screen and (max-width: 600px) {
+     .corridor-icon-lrg {
+      vertical-align: top;
+    }
+    .corridor-hdr h2 {
+      font-size: 2.4rem;
+      font-size: 24px;
+      max-width: 70%;
+    }
+}
+
+.content-block {
+  border-top: 1px solid #ccc;
+  padding-top: .25em;
+  padding-bottom: 5em;
+}
+
+.content-block ul, .content-block ol  {
+  margin-left: 1em;
+}
+
+.sidebar-nav {
+    font-size: 1.6rem;
+    font-size: 16px;
+    margin-bottom: 2em;
+}
+
+.sidebar-nav li {
+  margin-bottom: 1.5em;
+  border-top: 1px solid #ccc;
+  padding-top: 5px;
+}
+
+
+
+.editor-photo {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.editor-photo img {
+  width: 50%;
+  margin: .5em 0;
+}
+
+.editor-details {
+  margin-bottom: 5em;
+}
+
+@media only screen and (max-width: 989px) {
+.editor-details {
+  margin-bottom: 1em;
+}
+}
+
+
+
+.galaxies-item a, #galaxies h2 { 
+  color: #624e42;
+}
+li.galaxies-item, #galaxies .editor-photo, #galaxies .content-block, #galaxies .corridor-hdr { 
+  border-color: #624e42;
+}
+
+
+.high-energy-item a, #high-energy h2 { 
+  color: #9c1857;
+}
+li.high-energy-item, #high-energy .editor-photo, #high-energy .content-block, #high-energy .corridor-hdr { 
+  border-color: #9c1857;
+}
+
+
+.stars-item a, #stars h2 { 
+  color: #00a1a2;
+}
+li.stars-item, #stars .editor-photo, #stars .content-block, #stars .corridor-hdr { 
+  border-color: #00a1a2;
+}
+
+
+.planetary-item a, #planetary h2 { 
+  color: #1d70b7;
+}
+li.planetary-item, #planetary .editor-photo, #planetary .content-block, #planetary .corridor-hdr { 
+  border-color: #1d70b7;
+}
+
+
+.interstellar-item a, #interstellar h2 { 
+  color: #4b67a7;
+}
+li.interstellar-item, #interstellar .editor-photo, #interstellar .content-block, #interstellar .corridor-hdr { 
+  border-color: #4b67a7;
+}
+
+
+.sun-item a, #sun h2 { 
+  color: #ef7c00;
+}
+li.sun-item, #sun .editor-photo, #sun .content-block, #sun .corridor-hdr { 
+  border-color: #ef7c00;
+}
+
+
+.instrumentation-item a, #instrumentation h2 { 
+  color: #70196f;
+}
+li.instrumentation-item, #instrumentation .editor-photo, #instrumentation .content-block, #instrumentation .corridor-hdr { 
+  border-color: #70196f;
+}
+
+
+ul.covers  {
+  margin-top: 1em;
+  margin-left: 0;
+}
+
+ul.covers li {
+list-style-type: none;
+}
+
+@media only screen and (max-width: 379px) {
+.covers {
+  width: 50%;
+  margin: 1em auto;
+}
+}
+
+.submit-buttons {
+  margin-bottom: 1em;
+}
+
+.submit-buttons a {
+ margin-right: 1em;
+ margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 379px) {
+  .submit-buttons a {
+    max-width: 100%;
+    width: auto;
+    display: block;
+  }
+}
+
+.date {
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 1.6rem;
+  margin-bottom: .5em;
+}
+
+video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* 6. Atomic and helper classes 
+naming inspired by http://docs.emmet.io/cheat-sheet/
+------ */
+
+.media, .media-body {
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.pull-left {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.pull-right {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.abs {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* border to images without adding to width */
+.bdr {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.bg-red-light {
+  background-color: #fff3f3;
+}
+
+/* border */
+.bd-0 {
+  border: 0;
+}
+
+.bd-1 {
+  border: 1px solid #ccc;
+}
+
+.bdt-1 {
+  border-top: 1px solid #ccc;
+}
+
+.bdr-1 {
+  border-right: 1px solid #ccc;
+}
+
+.bdb-1 {
+  border-bottom: 1px solid #ccc;
+}
+
+.bdl-1 {
+  border-left: 1px solid #ccc;
+}
+
+.bdt-6 {
+  border-top: 6px solid #253788;
+}
+
+.bdr-6 {
+  border-right: 6px solid #839ac6;
+}
+
+.bdb-6 {
+  border-bottom: 6px solid #839ac6;
+}
+
+.bdl-6 {
+  border-left: 6px solid #839ac6;
+}
+
+.bd-trans {
+  border-color: transparent;
+}
+
+/* margin */
+.mt-0 {
+  margin-top: 0;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mt-025 {
+  margin-top: .25em;
+}
+
+.mr-025 {
+  margin-right: .25em;
+}
+
+.mb-025 {
+  margin-bottom: .25em;
+}
+
+.ml-025 {
+  margin-left: .25em;
+}
+
+.mt-05 {
+  margin-top: .5em;
+}
+
+.mr-05 {
+  margin-right: .5em;
+}
+
+.mb-05 {
+  margin-bottom: .5em;
+}
+
+.ml-05 {
+  margin-left: .5em;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.mr-1 {
+  margin-right: 1em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.ml-1 {
+  margin-left: 1em;
+}
+
+.mt-2 {
+  margin-top: 2em;
+}
+
+.mr-2 {
+  margin-right: 2em;
+}
+
+.mb-2 {
+  margin-bottom: 2em;
+}
+
+.ml-2 {
+  margin-left: 2em;
+}
+
+.mt-3 {
+  margin-top: 3em;
+}
+
+.mr-3 {
+  margin-right: 3em;
+}
+
+.mb-3 {
+  margin-bottom: 3em;
+}
+
+.ml-3 {
+  margin-left: 3em;
+}
+
+.mar-0 {
+  margin: 0;
+}
+
+.mar-05 {
+  margin: .5em;
+}
+
+.mar-1 {
+  margin: 1em;
+}
+
+.mar-2 {
+  margin: 2em;
+}
+
+.mar-3 {
+  margin: 3em;
+}
+
+/* padding */
+.pt-0 {
+  padding-top: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.pt-05 {
+  padding-top: .5em;
+}
+
+.pr-05 {
+  padding-right: .5em;
+}
+
+.pb-05 {
+  padding-bottom: .5em;
+}
+
+.pl-05 {
+  padding-left: .5em;
+}
+
+.pt-1 {
+  padding-top: 1em;
+}
+
+.pr-1 {
+  padding-right: 1em;
+}
+
+.pb-1 {
+  padding-bottom: 1em;
+}
+
+.pl-1 {
+  padding-left: 1em;
+}
+
+.pt-2 {
+  padding-top: 2em;
+}
+
+.pr-2 {
+  padding-right: 2em;
+}
+
+.pb-2 {
+  padding-bottom: 2em;
+}
+
+.pl-2 {
+  padding-left: 2em;
+}
+
+.pt-3 {
+  padding-top: 3em;
+}
+
+.pr-3 {
+  padding-right: 3em;
+}
+
+.pb-3 {
+  padding-bottom: 3em;
+}
+
+.pl-3 {
+  padding-left: 3em;
+}
+
+.pad-05 {
+  padding: .5em;
+}
+
+.pad-1 {
+  padding: 1em;
+}
+
+.pad-2 {
+  padding: 2em;
+}
+
+.pad-3 {
+  padding: 3em;
+}
+
+/* floats */
+.fl-l {
+  float: left;
+}
+
+.fl-r {
+  float: right;
+}
+
+/* Text align */
+.ta-l {
+  text-align: left;
+}
+
+.ta-r {
+  text-align: right;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.lh-0 {
+line-height: 0;
+}
+
+
+/* 7. Print */
+
+@media print {
+
+/* turn off break-inside for columns */
+.col-no-break {
+  	-webkit-column-break-inside: auto;
+  	page-break-inside: auto;
+  	break-inside: auto;
+	}
+
+  nav, footer {
+	display: none;
+	}
+
+	img {
+   	max-width: 100% !important;
+	}
+	.boxout {
+  	background-color: #fff;
+	}
+
+/* print font-sizes */
+  body {
+  font-size: 12pt;
+  }
+  
+  .eyebrow {
+  font-size: 11pt;
+  }
+  
+  h1 {
+  font-size: 26pt;
+  }
+  
+  h2 {
+  font-size: 18pt;
+  }
+  
+  h3 {
+  font-size: 11pt;
+  }
+  
+  h4 {
+  font-size: 14pt;
+  }
+  
+  h5 {
+  font-size: 14pt;
+  }
+  
+  h6 {
+  font-size: 14pt;
+  }
+
+  blockquote {
+  font-size: 16pt;
+  }
+  
+  blockquote:before {
+  font-size: 24pt;
+  }
+    
+  .pullquote {
+  font-size: 18pt;
+  }
+  	
+  	.btn {
+  	font-size: 11pt; 
+  	}
+  	
+  	select {
+    font-size: 11pt;  
+  	}
+  	footer ul {
+	font-size: 11pt;
+	}
+	
+	h2, h3, h4, h5, h6 {
+   	page-break-after: avoid;
+	}
+
+	.boxout, img {
+ 	page-break-inside: avoid;	
+	}
+	
+	.wrapper {
+	width: 82.5%;
+	}
+	
+} 
+
