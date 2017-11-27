@@ -8,7 +8,7 @@
   </head>
   <Scene>
     <Background skyColor="0.5 0.5 0.5"/>
-    <Viewpoint fieldOfView="0.214466" position="79.8402 76.5924 1542.96" description="Default View" orientation="0 0 1 -0" centerOfRotation="79.8402 76.5924 97.9915"/>
+    <Viewpoint fieldOfView="0.214466" position="79.7953 76.3417 1542.72" description="Default View" orientation="0 0 1 -0" centerOfRotation="79.7953 76.3417 98.0595"/>
     <NavigationInfo type='"EXAMINE" "FLY" "ANY"' speed="4" headlight="true"/>
     <DirectionalLight ambientIntensity="1" intensity="0" color="1 1 1"/>
     <Transform DEF="ROOT" translation="0 0 0">
@@ -24400,7 +24400,7 @@
           </IndexedLineSet>
         </Shape>
       </Transform>
-      <Transform translation="80 -10 220" rotation="-0.999998 -0.00184349 6.02671e-05 -0.0653606" scale="4 4 4">
+      <Transform translation="80 -10 220" rotation="-0.999997 -0.00236806 7.72063e-05 -0.0651836" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -24578,7 +24578,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-10 80 220" rotation="0.0379462 0.999279 0.00128695 -0.0678532" scale="4 4 4">
+      <Transform translation="-10 80 220" rotation="0.0407539 0.999168 0.00138173 -0.067839" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -24932,7 +24932,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-10 -10 95" rotation="-0.694477 0.719194 -0.0214858 -0.0859826" scale="4 4 4">
+      <Transform translation="-10 -10 95" rotation="-0.693613 0.720028 -0.0214521 -0.0858551" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -26138,7 +26138,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="0 -10 215" rotation="-0.735672 0.676979 -0.0220486 -0.0884846" scale="4 4 4">
+      <Transform translation="0 -10 215" rotation="-0.734881 0.677838 -0.0220167 -0.0883397" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -27302,7 +27302,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-40 0 215" rotation="-0.53946 0.841662 -0.0242521 -0.106726" scale="4 4 4">
+      <Transform translation="-40 0 215" rotation="-0.538349 0.842375 -0.0241976 -0.106616" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -28182,7 +28182,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="160 -10 215" rotation="-0.734324 -0.678439 0.0220961 -0.0886467" scale="4 4 4">
+      <Transform translation="160 -10 215" rotation="-0.733152 -0.679706 0.0220774 -0.0885478" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -29086,7 +29086,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-40 160 215" rotation="0.572219 0.819698 0.0257169 -0.109546" scale="4 4 4">
+      <Transform translation="-40 160 215" rotation="0.573519 0.818787 0.0257699 -0.109645" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -30022,7 +30022,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-10 -10 180" rotation="-0.694542 0.71909 -0.0228199 -0.0913187" scale="4 4 4">
+      <Transform translation="-10 -10 200" rotation="-0.693695 0.719898 -0.0231221 -0.0925356" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -30442,7 +30442,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-10 -10 0" rotation="-0.694417 0.71929 -0.0201678 -0.0807101" scale="4 4 4">
+      <Transform translation="-10 -10 0" rotation="-0.693553 0.720124 -0.0201359 -0.0805896" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>

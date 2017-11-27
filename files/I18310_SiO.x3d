@@ -8,7 +8,7 @@
   </head>
   <Scene>
     <Background skyColor="0.5 0.5 0.5"/>
-    <Viewpoint fieldOfView="0.214466" position="79.8774 75.4371 1311.96" description="Default View" orientation="0 0 1 -0" centerOfRotation="79.8774 75.4371 52.9556"/>
+    <Viewpoint fieldOfView="0.214466" position="79.5028 76.1507 1314.39" description="Default View" orientation="0 0 1 -0" centerOfRotation="79.5028 76.1507 54.3869"/>
     <NavigationInfo type='"EXAMINE" "FLY" "ANY"' speed="4" headlight="true"/>
     <DirectionalLight ambientIntensity="1" intensity="0" color="1 1 1"/>
     <Transform DEF="ROOT" translation="0 0 0">
@@ -722,48 +722,44 @@
             389 388 393 -1 
             390 393 392 -1 
             391 392 393 -1 
-            394 406 407 -1 
-            406 394 408 -1 
-            394 407 409 -1 
-            408 394 409 -1 
-            395 410 411 -1 
-            410 395 413 -1 
-            396 412 414 -1 
-            411 412 396 -1 
-            411 396 395 -1 
+            394 404 405 -1 
+            404 394 406 -1 
+            394 405 407 -1 
+            406 394 407 -1 
+            395 408 409 -1 
+            408 395 411 -1 
+            396 410 412 -1 
+            409 410 396 -1 
+            409 396 395 -1 
             395 396 397 -1 
-            416 413 395 -1 
-            397 416 395 -1 
-            396 414 415 -1 
-            397 396 415 -1 
-            417 397 415 -1 
-            416 397 417 -1 
-            398 418 420 -1 
-            398 399 419 -1 
-            418 398 419 -1 
-            419 399 421 -1 
-            400 398 420 -1 
-            422 400 420 -1 
+            414 411 395 -1 
+            397 414 395 -1 
+            396 412 413 -1 
+            397 396 413 -1 
+            415 397 413 -1 
+            414 397 415 -1 
+            398 416 418 -1 
+            398 399 417 -1 
+            416 398 417 -1 
+            417 399 419 -1 
+            400 398 418 -1 
+            420 400 418 -1 
             399 398 401 -1 
             401 398 400 -1 
-            424 421 399 -1 
-            401 424 399 -1 
-            400 422 423 -1 
-            401 400 423 -1 
-            425 401 423 -1 
-            424 401 425 -1 
-            402 426 427 -1 
-            426 402 428 -1 
-            402 427 429 -1 
-            428 402 429 -1 
-            403 430 431 -1 
-            430 403 432 -1 
-            403 431 433 -1 
-            432 403 433 -1 
-            404 434 436 -1 
-            434 404 437 -1 
-            405 435 438 -1 
-            435 405 439 -1 
+            422 419 399 -1 
+            401 422 399 -1 
+            400 420 421 -1 
+            401 400 421 -1 
+            423 401 421 -1 
+            422 401 423 -1 
+            402 424 425 -1 
+            424 402 426 -1 
+            402 425 427 -1 
+            426 402 427 -1 
+            403 428 429 -1 
+            428 403 430 -1 
+            403 429 431 -1 
+            430 403 431 -1 
             ">
             <Coordinate DEF="VTKcoordinates0000" point="
               102 96 3.54428,
@@ -1170,8 +1166,6 @@
               113 141 119.5,
               43 143 119.685,
               110 158 119.802,
-              83 160 119.5,
-              88 160 119.5,
               74 8.60632 120,
               73.6063 9 120,
               74.3937 9 120,
@@ -1200,12 +1194,6 @@
               109.749 158 120,
               110.198 158 120,
               110 158.198 120,
-              83 159.5 120,
-              88 159.5 120,
-              82.5 160 120,
-              83.5 160 120,
-              87.5 160 120,
-              88.5 160 120,
               "/>
             <Normal DEF="VTKnormals0000" vector="
               -0.187712 -0.59746 -0.779619,
@@ -1612,8 +1600,6 @@
               0.2079 0.184638 -0.960566,
               -0 -0 -1,
               0.0927448 -0 -0.99569,
-              -0 -0.5547 -0.83205,
-              -0 -0.5547 -0.83205,
               -0 -0.308786 -0.951132,
               -0.308786 -0 -0.951132,
               0.308786 -0 -0.951132,
@@ -1642,12 +1628,6 @@
               -0.0586271 -0 -0.99828,
               0.222708 -0 -0.974885,
               0.103326 0.122175 -0.987115,
-              -0 -0.83205 -0.5547,
-              -0 -0.83205 -0.5547,
-              -0.333333 -0.666667 -0.666667,
-              0.333333 -0.666667 -0.666667,
-              -0.333333 -0.666667 -0.666667,
-              0.333333 -0.666667 -0.666667,
               "/>
             <Color DEF="VTKcolors0000" color="
               0.588235 0 0,
@@ -2054,14 +2034,6 @@
               0.466667 1 0.501961,
               1 0.843137 0,
               1 0.407843 0,
-              0.466667 1 0.501961,
-              0.466667 1 0.501961,
-              0.501961 0 0,
-              0.501961 0 0,
-              0.501961 0 0,
-              0.501961 0 0,
-              0.501961 0 0,
-              0.501961 0 0,
               0.501961 0 0,
               0.501961 0 0,
               0.501961 0 0,
@@ -3926,7 +3898,7 @@
           </IndexedLineSet>
         </Shape>
       </Transform>
-      <Transform translation="80 -10 130" rotation="-0.999999 -0.00143363 5.17468e-05 -0.0721587" scale="4 4 4">
+      <Transform translation="80 -10 130" rotation="-0.999983 -0.0057631 0.000209323 -0.0726119" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -4104,7 +4076,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-10 80 130" rotation="0.0507756 0.998708 0.00192771 -0.0759922" scale="4 4 4">
+      <Transform translation="-10 80 130" rotation="0.0430288 0.999073 0.0016235 -0.0754951" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -4458,7 +4430,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-10 -10 50" rotation="-0.689639 0.723739 -0.0244712 -0.0979791" scale="4 4 4">
+      <Transform translation="-10 -10 50" rotation="-0.694142 0.719421 -0.024481 -0.0979669" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -5664,7 +5636,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="0 -10 125" rotation="-0.731078 0.681854 -0.0245081 -0.0982506" scale="4 4 4">
+      <Transform translation="0 -10 125" rotation="-0.735488 0.677095 -0.0244899 -0.0982747" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -6714,7 +6686,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-40 0 125" rotation="-0.533763 0.845209 -0.0268314 -0.118809" scale="4 4 4">
+      <Transform translation="-40 0 125" rotation="-0.538548 0.842165 -0.0269323 -0.118624" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -7646,7 +7618,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="160 -10 125" rotation="-0.730035 -0.682968 0.0245481 -0.0983906" scale="4 4 4">
+      <Transform translation="160 -10 125" rotation="-0.731285 -0.681627 0.0246538 -0.0988386" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -8656,7 +8628,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-40 160 125" rotation="0.577643 0.815774 0.0290223 -0.123023" scale="4 4 4">
+      <Transform translation="-40 160 125" rotation="0.57557 0.817246 0.0287713 -0.122179" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -9512,7 +9484,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-10 -10 90" rotation="-0.689683 0.72367 -0.0252679 -0.101167" scale="4 4 4">
+      <Transform translation="-10 -10 110" rotation="-0.694209 0.719315 -0.0256937 -0.102817" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
@@ -9928,7 +9900,7 @@
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <Transform translation="-10 -10 0" rotation="-0.68959 0.723817 -0.0235431 -0.0942655" scale="4 4 4">
+      <Transform translation="-10 -10 0" rotation="-0.694094 0.719499 -0.0235543 -0.0942605" scale="4 4 4">
         <Shape>
           <Appearance>
             <Material ambientIntensity="0" emissiveColor="0 0 0" diffuseColor="1 1 1" specularColor="0 0 0" shininess="0.0078125" transparency="0"/>
