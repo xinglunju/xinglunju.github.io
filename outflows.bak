@@ -30,6 +30,11 @@ Released   : 20130308
 	{
 		border:2px solid darkorange;
 		background: #909090;
+		padding-bottom=: '600px';
+	}
+	.tdbox
+	{
+		padding-bottom: 496px;
 	}
 </style>
 </head>
@@ -69,6 +74,7 @@ Released   : 20130308
 		The code to make the visualization is available at <a href="https://github.com/xinglunju/tdviz" target="_blank" class="class2">the GitHub page</a>.</b>
 		</p>
 		<h3>CO 2-1 outflows in I18308</h3>
+		<!--p class='tdbox'-->
 		    <x3d id='I18308_CO' width='500px' height='500px'>
 			<scene>
 			<inline url="files/I18308_CO.x3d" nameSpaceName="I18308 CO 2-1" mapDEFToID="true" onclick=''/>
@@ -77,126 +83,103 @@ Released   : 20130308
 			<br clear=all>
 			<button onclick="document.getElementById('I18308_CO').runtime.resetView();">Reset View</button>
 			<br>
-		</br>
-		<h3>SiO 5-4 outflows in I18308</h3>
-		    <x3d id='I18308_SiO' width='500px' height='500px'>
+		<!--/p-->
+		<p>SiO 5-4 outflows in I18308</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px'>
 			<scene>
 			<inline url="files/I18308_SiO.x3d" nameSpaceName="I18308 SiO 5-4" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I18308_SiO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>CO 2-1 outflows in I18310</h3>
-		    <x3d id='I18310_CO' width='500px' height='500px' margin-left='500px'>
+		</p>
+		<p>CO 2-1 outflows in I18310</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px' margin-left='500px'>
 			<scene>
 			<inline url="files/I18310_CO.x3d" nameSpaceName="I18310 CO 2-1" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I18310_CO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>SiO 5-4 outflows in I18310</h3>
-		    <x3d id='I18310_SiO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>SiO 5-4 outflows in I18310</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I18310_SiO.x3d" nameSpaceName="I18310 SiO 5-4" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I18310_SiO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>CO 2-1 outflows in I18337</h3>
-		    <x3d id='I18337_CO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>CO 2-1 outflows in I18337</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I18337_CO.x3d" nameSpaceName="I18337 CO 2-1" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I18337_CO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>SiO 5-4 outflows in I18337</h3>
-		    <x3d id='I18337_SiO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>SiO 5-4 outflows in I18337</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I18337_SiO.x3d" nameSpaceName="I18337 SiO 5-4" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I18337_SiO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>CO 2-1 outflows in I18460</h3>
-		    <x3d id='I18460_CO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>CO 2-1 outflows in I18460</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I18460_CO.x3d" nameSpaceName="I18460 CO 2-1" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I18460_CO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>CO 2-1 outflows in I18530</h3>
-		    <x3d id='I18530_CO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>CO 2-1 outflows in I18530</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I18530_CO.x3d" nameSpaceName="I18530 CO 2-1" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I18530_CO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>SiO 5-4 outflows in I18530</h3>
-		    <x3d id='I18530_SiO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>SiO 5-4 outflows in I18530</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I18530_SiO.x3d" nameSpaceName="I18530 SiO 5-4" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I18530_SiO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>CO 2-1 outflows in I19074</h3>
-		    <x3d id='I19074_CO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>CO 2-1 outflows in I19074</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I19074_CO.x3d" nameSpaceName="I19074 CO 2-1" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I19074_CO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>CO 2-1 outflows in I19220</h3>
-		    <x3d id='I19220_CO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>CO 2-1 outflows in I19220</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I19220_CO.x3d" nameSpaceName="I19220 CO 2-1" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I19220_CO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>CO 2-1 outflows in I19368</h3>
-		    <x3d id='I19368_CO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>CO 2-1 outflows in I19368</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I19368_CO.x3d" nameSpaceName="I19368 CO 2-1" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I19368_CO').runtime.resetView();">Reset View</button>
-			<br>
-		</br>
-		<h3>SiO 5-4 outflows in I19368</h3>
-		    <x3d id='I19368_SiO' width='500px' height='500px', margin-left='500px'>
+		</p>
+		<p>SiO 5-4 outflows in I19368</p>
+		<p class='tdbox'>
+		    <x3d width='500px' height='500px', margin-left='500px'>
 			<scene>
 			<inline url="files/I19368_SiO.x3d" nameSpaceName="I19368 SiO 5-4" mapDEFToID="true" onclick=''/>
 			</scene>
 			</x3d>
-			<br clear=all>
-			<button onclick="document.getElementById('I19368_SiO').runtime.resetView();">Reset View</button>
-			<br>
+		</p>
 	</div>
 </div>
 <!-- end #page --> 
