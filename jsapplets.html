@@ -15,12 +15,31 @@ Released   : 20130308
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Miriad tricks</title>
+<title>Javascript Applets</title>
 <!--link href="http://fonts.googleapis.com/css?family=Arvo|Open+Sans:400,300,600,700" rel="stylesheet" type="text/css" /-->
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="scripts/jquery-1.11.3.min.js"></script>
+<script src="scripts/d3.min.js"></script>
 <script src="scripts/backtotop.js"></script>
 <script src="scripts/tracking.js"></script>
+<script language="javascript">
+function vdisp() {
+	mweight = thermalv.mweight.value;
+	t = thermalv.t.value;
+	var sigmav = new Number(Math.sqrt(2*t/mweight*8.2544e7)/1e5);
+	var sigmav = sigmav.toFixed(2);
+	thermalv.sigmav.value = sigmav;
+}
+</script>
+<script language="javascript">
+function mvir() {
+	sigmav = virial.sigmav.value;
+	r = virial.r.value;
+	var mass = new Number(116.3*Math.pow(sigmav,2)*(r/0.1));
+	var mass = mass.toFixed(1);
+	virial.mass.value = mass;
+}
+</script>
 </head>
 <body>
 
@@ -43,21 +62,26 @@ Released   : 20130308
 
 <div id="page">
 	<div class="post">
-		<p>Some Miriad tricks that might be useful. [Last update: Jun 04, 2015]</p>
-		<p>Acknowledgements: Qizhou Zhang, Tao-Chung Ching.</p>
-		<p>Please let me know if you find something wrong or you have better solutions to these issues, thanks!</p>
-		<p>References: 
-			<ol>
-				<li><a href="https://www.cfa.harvard.edu/sma/miriad/" target="_blank" class="class2">MIRIAD for SMA</a></li>
-				<li><a href="http://www.atnf.csiro.au/computing/software/miriad/" target="_blank" class="class2">ATNF MIRIAD</a></li>
-				<li><a href="https://www.cfa.harvard.edu/~pwilliam/miriad-macport/" target="_blank" class="class2">MIRIAD MacPort</a></li>
-			</ol>
-		</p>
-		<h2>General Issues</h2>
-			<ul>
-				<li>The invert task will not use data of one antenna if part of its spectrum has been flagged or missing, unless you specify the 'slop' keyword! (e.g. 'slop=1,zero' will replace all bad channels with 0.)</li>
-				<li>If a keyword is too long, for example the input of invert when mosaicing a very large area with hundreds of pointings, one can list all the input parameters in a file and use 'keyword=@filename'.</li>
-			</ul>
+		<p>Thermal velocity dispersions:</p>
+		<table>
+		<form name="thermalv">
+		<tr><td>Temperature</td><td><input type="text" name="t" size=4" style="text-align:right;"> K</td></tr>
+		<tr><td>Molecular Weight</td><td><input type="text" name="mweight" size=4 style="text-align:right;"> amu</td></tr>
+		<tr><td><input type="button" value="Calculate" onClick="vdisp()"></td></tr>
+		<tr><td>The thermal velocity dispersion is</td><td><input type="text" name="sigmav" size=4 style="text-align:right;"> km/s.</td></tr>
+		</form>
+		</table>
+		<hr>
+		</br>
+		<p>Virial masses:</p>
+		<table>
+		<form name="virial">
+		<tr><td>Velocity dispersion</td><td><input type="text" name="sigmav" size=4" style="text-align:right;"> km/s</td></tr>
+		<tr><td>Radius</td><td><input type="text" name="r" size=4 style="text-align:right;"> pc</td></tr>
+		<tr><td><input type="button" value="Calculate" onClick="mvir()"></td></tr>
+		<tr><td>The virial mass is</td><td><input type="text" name="mass" size=4 style="text-align:right;"> <i>M</i><sub>&#x2299;</sub>.</td></tr>
+		</form>
+		</table>
 	</div>
 </div>
 <!-- end #page --> 

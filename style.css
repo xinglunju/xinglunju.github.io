@@ -8,10 +8,11 @@ Released for free under the Creative Commons Attribution License
 body {
 	margin: 0;
 	padding: 0;
-	background: url("images/bg2.jpg");
+	/*background: url("images/bg2.jpg");*/
+	background-color: rgb(46,33,27);
 	background-size: 100% 100%;
 	background-attachment: fixed;
-	font-family: Helvetica, sans-serif;
+	font-family: Georgia, sans-serif;
 	font-size: 0.8em;
 	color: rgb(33,30,85);
 }
@@ -21,7 +22,7 @@ h1, h2, h3 {
 	padding: 0 0 0.4em;
 	letter-spacing: 0;
 	text-transform: none;
-	font-family: Helvetica, sans-serif;
+	font-family: Georgia, sans-serif;
 	font-weight: bold;
 	font-style: normal;
 	color: #5A5AFF;
@@ -70,6 +71,15 @@ a:hover {
 	text-decoration: underline;
 }
 
+hr.gradient { 
+	border: 0; 
+	height: 1px; 
+	background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+	background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+	background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+	background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
 /* Wrapper */
 
 #wrapper {
@@ -93,7 +103,7 @@ a:hover {
 	padding-top: 30px;
 	text-transform: none;
 	font-size: 2.0em;
-	font-family: Helvetica, sans-serif;
+	font-family: Georgia, sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	color: rgb(255,255,0);
@@ -117,7 +127,7 @@ a:hover {
 	padding: 0px;
 	text-transform: none;
 	font-size: 2.0em;
-	font-family: Helvetica, sans-serif;
+	font-family: Georgia, sans-serif;
 	color: rgb(105,176,172);
 }
 
@@ -125,7 +135,7 @@ a:hover {
 	margin: 0px;
 	padding: 0px;
 	text-transform: none;
-	font-family: Helvetica, sans-serif;
+	font-family: Georgia, sans-serif;
 	color: rgb(28,134,255);
 }
 
@@ -220,7 +230,7 @@ a:hover {
 	text-decoration: none;
 	text-align: center;
 	text-transform: none;
-	font-family: Helvetica, sans-serif;
+	font-family: Georgia, sans-serif;
 	font-size: 1.2em;
 	font-weight: normal;
 	color: rgb(255,255,0);
@@ -463,7 +473,7 @@ a:hover {
 	height: 1.5em;
 	margin: 0em auto 0;
 	padding: 0;
-	font-family: Helvetica, sans-serif;
+	font-family: Georgia, sans-serif;
 	position: absolute;
 	background-color: transparent;
 	bottom: 0;
@@ -530,7 +540,7 @@ a:hover {
 	background-color: #000000;
 	color: rgb(255,255,0);
 	font-size: 0.8em;
-	font-family: Helvetica;
+	font-family: Georgia;
 	font-weight: normal;
 	font-style: normal;
 	float: right;
