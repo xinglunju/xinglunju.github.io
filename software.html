@@ -40,7 +40,7 @@ Released   : 20130308
 	<div id="menu">
 		<ul>
 			<li><a href="index.html">Home</a></li>
-			<li><a href="research.html">Research & Publications</a></li>
+			<li><a href="research.html">Research</a></li>
 			<li class="current_page_item"><a href="#">Software & Code</a></li>
 			<li><a href="teaching.html">Teaching & Outreach</a></li>
 			<li><a href="links.html">Links</a></li>
@@ -69,11 +69,11 @@ Released   : 20130308
 			<hr class="gradient">
 			<h2><a id="TDViz">TDViz: Three-dimensional Datacube Visualizer</a></h2>
 				<p><a href="https://github.com/xinglunju/tdviz" target="_blank" class="class2">GitHub link</a></p>
-				<p>Related publications: &#8226; <a href="http://adsabs.harvard.edu/abs/2018ApJ...855....9L" target="_blanck" class="class2">Lu et al. 2018, ApJ, 855, 9</a>. &#8226; <a href="http://www.astroexplorer.org/search/eyJjb250ZW50VHlwZXMiOlsiSW50ZXJhY3RpdmUgZmlndXJlcyJdLCJwYWdlIjoxLCJzaG93IjoyNX0" target="_blanck" class="class2">Interactive figures on the AstroExplorer</a>.</p>
+				<p>Related publications: &#8226; <a href="http://adsabs.harvard.edu/abs/2018ApJ...855....9L" target="_blank" class="class2">Lu et al. 2018, ApJ, 855, 9</a>. &#8226; <a href="http://www.astroexplorer.org/search/eyJjb250ZW50VHlwZXMiOlsiSW50ZXJhY3RpdmUgZmlndXJlcyJdLCJwYWdlIjoxLCJzaG93IjoyNX0" target="_blank" class="class2">Interactive figures on the AstroExplorer</a>.</p>
 				<p>This code is originally a module prepared for <a href="http://ay201b.wordpress.com/topical-modules/2013-topical-modules/" target="_blank" class="class2">the AY201b course</a> tutored by Prof. Alyssa Goodman at Harvard Astronomy Department (see <a href="ay201b/index.html" target="_blank" class="class1">the module website</a>). It can be run with 'python TDViz.py', as long as you have <a href="#dep" class="class1">all the required python packages</a> installed. A snapshot of the interface is shown below.</p>
 				<img src="images/tdviz_sc.png" style="float:center;width:600px;"/>
 				<p>You can select your own FITS datacubes. Then the starting and ending pixels of the three axes, and the maximum and minimum values will be updated, respectively. The default scene will be the entire datacube. If you want to focus on a smaller region and/or a narrower velocity range, you can change corresponding values and click the 'Plot' button again. You can also exporting a 3D scene or make a GIF movie.</p>
-				<p>Here is an example: a visualizatin of CO (2-1) outflows in IRAS 18308-0841 as observed by the SMA (<a href="http://adsabs.harvard.edu/abs/2018ApJ...855....9L" target="_blanck" class="class2">Lu et al. 2018</a>):</p>
+				<p>Here is an example: a visualizatin of CO (2-1) outflows in IRAS 18308-0841 as observed by the SMA (<a href="http://adsabs.harvard.edu/abs/2018ApJ...855....9L" target="_blank" class="class2">Lu et al. 2018</a>):</p>
 				<x3d id='I18308_CO' width='500px' height='500px'>
 				<scene>
 				<inline url="files/I18308_CO.x3d" nameSpaceName="I18308 CO 2-1" mapDEFToID="true" onclick=''/>
@@ -88,10 +88,10 @@ Released   : 20130308
 			<hr class="gradient">
 			<h2><a id="PyAmor">PyAMOR: Python script for AMmOnia data Reduction</a></h2>
 				<p><a href="https://github.com/xinglunju/pyAmor" target="_blank" class="class2">GitHub link</a></p>
-				<p>Related publications: &#8226; <a href="http://adsabs.harvard.edu/abs/2015ApJ...805..171L" target="_blanck" class="class2">Lu et al. 2015, ApJ, 805, 171</a>. &#8226; <a href="http://adsabs.harvard.edu/abs/2017ApJ...839....1L" target="_blanck" class="class2">Lu et al. 2017, ApJ, 839, 1</a>. &#8226; <a href="http://adsabs.harvard.edu/abs/2018ApJ...855....9L" target="_blanck" class="class2">Lu et al. 2018, ApJ, 855, 9</a>.</p>
+				<p>Related publications: &#8226; <a href="http://adsabs.harvard.edu/abs/2015ApJ...805..171L" target="_blank" class="class2">Lu et al. 2015, ApJ, 805, 171</a>. &#8226; <a href="http://adsabs.harvard.edu/abs/2017ApJ...839....1L" target="_blank" class="class2">Lu et al. 2017, ApJ, 839, 1</a>. &#8226; <a href="http://adsabs.harvard.edu/abs/2018ApJ...855....9L" target="_blank" class="class2">Lu et al. 2018, ApJ, 855, 9</a>.</p>
 				<p><img src="images/pyamor.png" style="float:center;width:400px;"/>
 				</br>
-				Figure 6 of <a href="http://adsabs.harvard.edu/abs/2018ApJ...855....9L" target="_blanck" class="class2">Lu et al. 2018, ApJ, 855, 9</a>.
+				Figure 6 of <a href="http://adsabs.harvard.edu/abs/2018ApJ...855....9L" target="_blank" class="class2">Lu et al. 2018, ApJ, 855, 9</a>.
 				</p>
 				<p>This code is dedicated to modeling spectra of low level ammonia transitions (between (J,K)=(1,1) and (5,5)) and deriving parameters including linewidths, column densities, and temperatures under LTE conditions. The curve fitting is implemented by <a href="http://lmfit.github.io/lmfit-py" target="_blank" class="class2">the lmfit package</a>. It is able to fit spectra with up to two velocity components along the line of sight and provide one set of best fitted parameters for each component. For now it can only fit two velocity components in the interative mode, which means you need to manually identify the two velocities and in the case of low S/N ratios the fitting may not converge. When looping through entire maps in the non-interacitve mode, it only fits one velocity component, and if there are more than one component, it will take the highest peak at each pixel to do the fitting.</p>
 				<p>What it can do now: For low S/N or low spectral resolution data, use cross-correlation between a model and a regridded spectrum (e.g. 10 times smaller channel width) to find the peak velocity, then fix it and run the minimization process. For high S/N data, it is ok to let the peak velocity be a free parameter.</p>
@@ -99,25 +99,25 @@ Released   : 20130308
 			<hr class="gradient">
 			<h2><a id="emanon">EMANON: Estimate of Methyl cyanide parameters with NON-linear optimization</a></h2>
 				<p><a href="https://github.com/xinglunju/emanon" target="_blank" class="class2">GitHub link</a></p>
-				<p>Related publications: &#8226; <a href="http://adsabs.harvard.edu/abs/2017ApJ...847...87S" target="_blanck" class="class2">Silva et al. 2017, ApJ, 847, 87</a>.</p>
+				<p>Related publications: &#8226; <a href="http://adsabs.harvard.edu/abs/2017ApJ...847...87S" target="_blank" class="class2">Silva et al. 2017, ApJ, 847, 87</a>.</p>
 				<p><img src="images/emanon.png" style="float:center;width:400px;"/>
 				</br>
-				Figure 6 of <a href="http://adsabs.harvard.edu/abs/2017ApJ...847...87S" target="_blanck" class="class2">Silva et al. 2017, ApJ, 847, 87</a>.
+				Figure 6 of <a href="http://adsabs.harvard.edu/abs/2017ApJ...847...87S" target="_blank" class="class2">Silva et al. 2017, ApJ, 847, 87</a>.
 				</p>
 				<p>A code to fit CH<sub>3</sub>CN hyperfine lines and estimate linewidths, temperatures, and column densities, under LTE conditions.</p>
 				<p>It is adapted from Roberto Galvan-Madrid's Mathematica code. 'Emanon' is actually 'No name' spelled backwards. I don't know the origin of this word but I learned it in Shinji Kajio's fiction <i>Memories of Emanon</i>... </a>
 			<hr class="gradient">
 			<h2><a id="fftl">FFTL: Fitting Formaldehyde Triple Lines at &#126;218 GHz</a></h2>
 				<p><a href="https://github.com/xinglunju/FFTL" target="_blank" class="class2">GitHub link</a></p>
-				<p>Related publications: &#8226; <a href="http://adsabs.harvard.edu/abs/2018MNRAS.474.2373W" target="_blanck" class="class2">Walker et al. 2018, MNRAS, 474, 2373</a>.</p>
+				<p>Related publications: &#8226; <a href="http://adsabs.harvard.edu/abs/2018MNRAS.474.2373W" target="_blank" class="class2">Walker et al. 2018, MNRAS, 474, 2373</a>.</p>
 				<p><img src="images/fftl.png" style="float:center;width:400px;"/>
 				</br>
-				Figure A2 of <a href="http://adsabs.harvard.edu/abs/2018MNRAS.474.2373W" target="_blanck" class="class2">Walker et al. 2018, MNRAS, 474, 2373</a>.
+				Figure A2 of <a href="http://adsabs.harvard.edu/abs/2018MNRAS.474.2373W" target="_blank" class="class2">Walker et al. 2018, MNRAS, 474, 2373</a>.
 				</p>
 				<p>A code to fit the three H<sub>2</sub>CO lines around 218 GHz and estimate linewidths, temperatures, and column densities, under LTE conditions.</p>
 			<hr class="gradient">
 			<h2>A Dancing Dophin</h2>
-				<p>You can find it <a href="http://python4astronomers.github.io/contest/bounce.html" target="_blank" class="class2">here</a>. Just for fun...</p>
+				<p>This is the first Python code I wrote back in 2012, when I attended the Practical Python for Astronomers workshop at CfA. You can find it <a href="http://python4astronomers.github.io/contest/bounce.html" target="_blank" class="class2">here</a>.</p>
 				<img src="images/dolphin.gif" style="float:center;-moz-transform:scaleY(-1);-webkit-transform:scaleY(-1);-o-transform:scaleY(-1);transform:scaleY(-1);"/>
 	</div>
 </div>

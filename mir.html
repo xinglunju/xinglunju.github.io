@@ -30,7 +30,7 @@ Released   : 20130308
 	<div id="menu">
 		<ul>
 			<li><a href="index.html">Home</a></li>
-			<li><a href="research.html">Research & Publications</a></li>
+			<li><a href="research.html">Research</a></li>
 			<li class="current_page_item"><a href="software.html#">Software & Code</a></li>
 			<li><a href="teaching.html">Teaching & Outreach</a></li>
 			<li><a href="links.html">Links</a></li>
@@ -70,7 +70,7 @@ Released   : 20130308
 				<li>MIR does a self-calibration for the passband calibrators with pass_cal, so any phase jump over time in them is fine.</li>
 				<li>Use antenna-based passband calibration to increase the S/N, if some chunks in some baselines show a very different phase/amplitude passband as compared to the others. The possible cause is that the dependence of passband on frequency/time changes.</li>
 				<li>It is ok to use all quasars, including gain calibrators, for passband calibration. Make sure them do not have line features (e.g. one of the frequently-used gain calibrators, 1744-312, has <sup>12</sup>CO line features).</li>
-				<li>If the two IFs show a flat phase, then there is no need to do passband calibration separately. However if e.g. the gain calibrators show phase jump between IFs and we do not exactly know the reason, then we have to do passband calibration and subsequent gain calibration for the two IFs separately. Select either IF and use uti_avgband to regenrerate the continuum band before gain calibration. Or there is another way: use uti_difif and gaincal with /difif to correct for this phase jump before passband calibration, see <a href="https://www.cfa.harvard.edu/~cqi/mir/mirtutorial2014.txt" target=_blanck" class="class2">Charlie Qi's note</a>.</li>
+				<li>If the two IFs show a flat phase, then there is no need to do passband calibration separately. However if e.g. the gain calibrators show phase jump between IFs and we do not exactly know the reason, then we have to do passband calibration and subsequent gain calibration for the two IFs separately. Select either IF and use uti_avgband to regenrerate the continuum band before gain calibration. Or there is another way: use uti_difif and gaincal with /difif to correct for this phase jump before passband calibration, see <a href="https://www.cfa.harvard.edu/~cqi/mir/mirtutorial2014.txt" target=_blank" class="class2">Charlie Qi's note</a>.</li>
 				<li>Using too many passband calibrators, therefore the averaged passband solutions, might lead to uneven phase between the two IFs. If so, try using only one passband calibrator.</li>
 				<li>Sometimes there is a 'Bad Sample Statistics (corrPlotter red boxes)' error recorded in the observing log, then the chunk(s) mentioned might actually not receive any signal, and show a very small amplitude during pass_cal. Need to flag such chunks later.</li>
 			</ul>
