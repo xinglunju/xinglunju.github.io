@@ -45,9 +45,17 @@ function ItoTB() {
 	I = brightness.I.value;
 	freq = brightness.freq.value;
 	size = brightness.size.value;
-	var TB = new Number(1.224e6*I/Math.pow(freq,2)/Math.pow(size,2));
-	var TB = TB.toFixed(2);
-	virial.TB.value = TB;
+	var rTB = new Number(1.224e6*I/Math.pow(freq,2)/Math.pow(size,2));
+	var rTB = rTB.toFixed(6);
+	brightness.rTB.value = rTB;
+}
+function TBtoI() {
+	TB = brightness.TB.value;
+	freq = brightness.freq.value;
+	size = brightness.size.value;
+	var rI = new Number(TB/1.224e6*Math.pow(freq,2)*Math.pow(size,2));
+	var rI = rI.toFixed(6);
+	brightness.rI.value = rI;
 }
 </script>
 </head>
@@ -96,12 +104,16 @@ function ItoTB() {
 		</br>
 		<p>Conversion between intensities and brightness temperatures:</p>
 		<table>
-		<form name="ItoTB">
-		<tr><td>Specific intensity</td><td><input type="text" name="I" size=4" style="text-align:right;"> Jy</td></tr>
+		<form name="brightness">
 		<tr><td>Frequency</td><td><input type="text" name="freq" size=4 style="text-align:right;"> GHz</td></tr>
 		<tr><td>Beam size</td><td><input type="text" name="size" size=4 style="text-align:right;"> arcsec</td></tr>
+		<tr><td>Specific intensity</td><td><input type="text" name="I" size=4" style="text-align:right;"> Jy</td></tr>
 		<tr><td><input type="button" value="Calculate" onClick="ItoTB()"></td></tr>
-		<tr><td>The brightness temperature is</td><td><input type="text" name="TB" size=4 style="text-align:right;"> K.</td></tr>
+		<tr><td>The brightness temperature is</td><td><input type="text" name="rTB" size=8 style="text-align:right;"> K.</td></tr>
+		<tr><td>Or:</td></tr>
+		<tr><td>Brightness temperature</td><td><input type="text" name="TB" size=4" style="text-align:right;"> K</td></tr>
+		<tr><td><input type="button" value="Calculate" onClick="TBtoI()"></td></tr>
+		<tr><td>The specific intensity is</td><td><input type="text" name="rI" size=8 style="text-align:right;"> Jy.</td></tr>
 		</form>
 		</table>
 	</div>
@@ -109,7 +121,7 @@ function ItoTB() {
 <!-- end #page --> 
 
 <div id="footer">
-	<p>&copy; 2020 Xing Lu. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+	<p>&copy; 2021 Xing Lu. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
 </div>
 <!-- end #footer -->
 
