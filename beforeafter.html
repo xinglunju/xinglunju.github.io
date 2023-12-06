@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www.adamgginsburg.com/brick/slider.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scripts/slider.css">
+    <title>Before/After Image Slider</title>
+<script src="./scripts/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+        <div class="container" style="width: 800px; height: 800px;">
+    <div class="resize-handle">
+           <div class="img background-img" style="background-size: 800px;"></div>
+           <div class="img foreground-img" style="background-size: 800px; width: 60%;"></div>
+</div>
+           <div class="slider-button" style="left: calc(60% - 34px);"> </div>
+           <input type="range" min="1" max="100" value="50" class="slider" name="slider" id="slider">
+
+        </div>
+        
+
+
+
+<script>
+const $slider = $("#slider");
+const $container = $(".container");
+const $containerimg = $(".container .img");
+const $resizeHandle = $(".resize-handle");
+const maxZoom = 1; // Adjust the maximum zoom level as needed
+const minZoom = 0.01; // Adjust the minimum zoom level as needed
+let currentZoom = 0.25;
+
+let isResizing = false;
+let startX, startY;
+
+// Listen for mouse down event on the resize handle
+//$resizeHandle.on("mousedown", (e) => {
+//  e.preventDefault();
+//  isResizing = true;
+//  startX = e.pageX;
+//  startY = e.pageY;
+//});
+//
+//// Listen for mouse move event on the document
+//$(document).on("mousemove", (e) => {
+//  if (isResizing) {
+//    const deltaX = e.pageX - startX;
+//    const deltaY = e.pageY - startY;
+//    const newWidth = $container.width() + deltaX;
+//    const newHeight = $container.height() + deltaY;
+//
+//    // Calculate new zoom level while preserving aspect ratio
+//    const aspectRatio = 5725 / 2350;
+//    const calculatedZoom = Math.min(
+//      maxZoom,
+//      Math.max(minZoom, newWidth / 5725, newHeight / 2350)
+//    );
+//
+//    currentZoom = calculatedZoom;
+//    updateContainerSize();
+//    updateSliderPosition();
+//
+//    startX = e.pageX;
+//    startY = e.pageY;
+//  }
+//});
+
+// Listen for mouse up event on the document
+//$(document).on("mouseup", () => {
+//  isResizing = false;
+//});
+
+//$slider.on("input change", (e) => {
+//  const sliderPos = e.target.value;
+//  currentZoom = minZoom + (maxZoom - minZoom) * (sliderPos / 100);
+//  updateContainerSize();
+//});
+
+function updateContainerSize() {
+  const newWidth = 2500 * currentZoom;
+  const newHeight = 2500 * currentZoom;
+  $container.css({
+    width: newWidth,
+    height: newHeight,
+  });
+  $containerimg.css({
+      "background-size": newWidth,
+  });
+}
+
+
+// Initialize the container and slider position
+updateContainerSize();
+//updateSliderPosition();
+    
+</script>
+<script>
+$("#slider").on("input change", (e)=>{
+  var sliderOffset = "15px";
+  const sliderPos = e.target.value;
+  // Update the width of the foreground image
+  $('.foreground-img').css('width', `${sliderPos}%`)
+  // Update the position of the slider button
+    if (window.innerWidth < 720) {
+        sliderOffset = "34px";
+    } else {
+        sliderOffset = "15px";
+    }
+    $('.slider-button').css('left', `calc(${sliderPos}% - ${sliderOffset})`)
+});
+</script>
+
+
+
+
+</body></html>
